@@ -11,62 +11,59 @@
 <ion-content [fullscreen]="true">
   <ion-card id="home"> 
     <div class="imagen_registro"> 
-      <img src="../../assets/img/crea.png" alt="registro"  class="imagen_responsiva">
-   </div>
+      <img src="../../assets/img/crea.png" alt="registro" class="imagen_responsiva">
+    </div>
     <form>
-      <ion-item lines="full">
+      <ion-item>
         <ion-label position="floating">Nombre</ion-label>
-        <ion-input labelPlacement="stacked" [clearOnEdit]="true" type="text" [(ngModel)]="nombre" required></ion-input>
+        <ion-input [clearOnEdit]="true" type="text" [(ngModel)]="nombre"></ion-input>
       </ion-item>
 
-      <ion-item lines="full">
-        <ion-label id="email" position="floating">Email</ion-label>
-        <ion-input labelPlacement="stacked" [clearOnEdit]="true" type="text" [(ngModel)]="email" required></ion-input>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [clearOnEdit]="true" type="text" [(ngModel)]="email"></ion-input>
       </ion-item>
 
-      <ion-item lines="full">
-        <ion-label position="floating">Fecha Nacimiento</ion-label><br>
-        <ion-input labelPlacement="stacked" [clearOnEdit]="true" type="date"  [(ngModel)]="fechaNacimiento"></ion-input>
+      <ion-item>
+        <ion-label position="floating">Fecha Nacimiento</ion-label>
+        <ion-input [clearOnEdit]="true" type="date" [(ngModel)]="fechaNacimiento"></ion-input>
       </ion-item>
 
-      <ion-item lines="full">
+      <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password"[(ngModel)]="password" required></ion-input>
+        <ion-input type="password" [(ngModel)]="password" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Confirmar Password</ion-label>
         <ion-input type="password" [(ngModel)]="confpassword"></ion-input>
-      </ion-item>      
-      
-      <ion-row>
-        <ion-col>                   
-          <ion-button [routerLink]="['/home']" id type="submit" color="light" expand="block" shape="round">Registrate</ion-button>
-        </ion-col>
-      </ion-row>      
+      </ion-item>
+
+      <ion-button expand="full" color="light" shape="round" (click)="enviarRegistro()">Enviar</ion-button>
+      <ion-button [routerLink]="['/home']" id type="submit" color="light" expand="block" shape="round">Regresar al Home</ion-button>
     </form>
   </ion-card>
 </ion-content>
 
-  <ion-footer class="footer">
-    <ion-toolbar color ="dark">
-      <ion-title>Conoce nuestras redes</ion-title>  
-      <ion-segment [scrollable]="true" value="heart">       
-        <ion-segment-button value="heart">
-          <ion-icon name="heart"></ion-icon>
-        </ion-segment-button>        
-        <ion-segment-button value="star">
-          <ion-icon name="star"></ion-icon>
-        </ion-segment-button>
-        <ion-segment-button value="call">
-          <ion-icon name="call"></ion-icon>
-        </ion-segment-button>
-        <ion-segment-button value="globe">
-          <ion-icon name="globe"></ion-icon>  
-            </ion-segment-button>        
-        <ion-segment-button value="person">
-          <ion-icon name="person"></ion-icon>
-        </ion-segment-button>
-      </ion-segment>       
-    </ion-toolbar>
-  </ion-footer>
+<ion-footer class="footer">
+  <ion-toolbar color="dark">
+    <ion-title>Conoce nuestras redes</ion-title>  
+    <ion-segment [scrollable]="true" value="heart">       
+      <ion-segment-button value="heart">
+        <ion-icon name="heart"></ion-icon>
+      </ion-segment-button>        
+      <ion-segment-button value="star">
+        <ion-icon name="star"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="call">
+        <ion-icon name="call"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="globe">
+        <ion-icon name="globe"></ion-icon>  
+      </ion-segment-button>        
+      <ion-segment-button value="person">
+        <ion-icon name="person"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>       
+  </ion-toolbar>
+</ion-footer>

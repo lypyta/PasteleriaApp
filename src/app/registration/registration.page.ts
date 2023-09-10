@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
@@ -12,36 +12,40 @@ export class RegistrationPage  {
   fechaNacimiento: string = '';
   password: string = '';
   confpassword: string = '';
+  
 
   constructor(private navCtrl: NavController, private toastCtrl: ToastController) { }
 
   enviarRegistro() {
+    // Elimina espacios en blanco alrededor del nombre
+    this.nombre = this.nombre.trim();
+  
     const fechaNacimientoDate = new Date(this.fechaNacimiento);
     const hoy = new Date();
     hoy.setDate(hoy.getDate() - 1);
-
+  
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
+  
     let mensajeError = '';
-
+  
     if (this.nombre.length < 3) {
       mensajeError = 'El nombre debe tener al menos 3 caracteres.';
-    }  else if (!emailPattern.test(this.email)) {
+    } else if (!emailPattern.test(this.email)) {
       mensajeError = 'El correo electrónico no es válido.';
     } else if (this.fechaNacimiento === '' || fechaNacimientoDate > hoy) {
       mensajeError = 'La fecha de nacimiento no es válida.';
     } else if (this.password.length < 8) {
       mensajeError = 'La contraseña debe tener al menos 8 caracteres.';
-    }else if (this.confpassword !== this.password) {
+    } else if (this.password !== this.confpassword) {
       mensajeError = 'Las contraseñas no coinciden.';
     }
-     if (mensajeError === '') {
+    if (mensajeError === '') {
       // Todos los campos son válidos, procede con el registro
       // Aquí debes implementar la lógica para guardar el usuario y la contraseña
-
+  
       // Mostrar un mensaje de éxito
       this.mostrarToast('Registro exitoso');
-
+  
       // Redirigir a la página de inicio de sesión u otra página necesaria
       this.navCtrl.navigateForward(['/login']);
     } else {
@@ -57,6 +61,8 @@ export class RegistrationPage  {
       position: 'top',
     });
     await toast.present();
-  }
-  
+    } 
+    volver() {
+      this.navCtrl.navigateBack(['']);   
+} 
 }

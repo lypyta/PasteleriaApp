@@ -9,7 +9,6 @@ import { NavController,ToastController  } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  // Declaración de propiedades
   username: string = '';
   password: string = '';
 

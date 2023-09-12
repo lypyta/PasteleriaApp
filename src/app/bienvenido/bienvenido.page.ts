@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './bienvenido.page.html',
   styleUrls: ['./bienvenido.page.scss'],
 })
-export class BienvenidoPage implements OnInit {
+export class BienvenidoPage {
   username: string = '';
 
   constructor(
@@ -19,8 +19,5 @@ export class BienvenidoPage implements OnInit {
       this.username = params['username'];
     });
   }
-
-  ngOnInit() {
-    // Código que deseas ejecutar al inicializar el componente
-  }
+  
 }

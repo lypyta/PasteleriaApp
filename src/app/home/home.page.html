@@ -33,15 +33,15 @@
       <ion-grid>
         <ion-row>
           <ion-col align-self-center>
-            <!-- Contenido adicional si es necesario -->
+            
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
-  <ion-button [routerLink]="['/registration']" color="light" shape="round" expand="block">Registrarse</ion-button>
+  <ion-button (click)="registration()" color="light" shape="round" expand="block">Registrarse</ion-button>
   
-  <ion-button [routerLink]="['/login']" color="light" shape="round" expand="block">Iniciar sesión</ion-button>
+  <ion-button (click)="login()"color="light" shape="round" expand="block">Iniciar sesión</ion-button>
   <a class="small-text">Ya tienes cuenta? inicia sesion</a>
 </ion-content>
 

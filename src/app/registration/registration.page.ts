@@ -29,13 +29,13 @@ export class RegistrationPage  {
     let mensajeError = '';
   
     if (this.nombre.length < 3) {
-      mensajeError = 'El nombre debe tener al menos 3 caracteres.';
+      mensajeError = 'El nombre debe tener al menos 3 caracteres';
     } else if (!emailPattern.test(this.email)) {
-      mensajeError = 'El correo electrónico no es válido.';
+      mensajeError = 'El correo electrónico no es válido';
     } else if (this.fechaNacimiento === '' || fechaNacimientoDate > hoy) {
-      mensajeError = 'La fecha de nacimiento no es válida.';
+      mensajeError = 'La fecha de nacimiento no es válida';
     } else if (this.password.length < 8) {
-      mensajeError = 'La contraseña debe tener al menos 8 caracteres.';
+      mensajeError = 'La contraseña debe tener al menos 8 caracteres';
     } else if (this.password !== this.confpassword) {
       mensajeError = 'Las contraseñas no coinciden.';
     }

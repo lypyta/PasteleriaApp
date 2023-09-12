@@ -16,23 +16,23 @@
     
     <form>
       <ion-item lines="full">
-        <ion-label position="floating" >Email</ion-label>
-        <ion-input labelPlacement="stacked" [clearOnEdit]="true" type="text" required></ion-input>
+        <ion-label position="floating" >Nombre</ion-label>
+        <ion-input labelPlacement="stacked" [clearOnEdit]="true" type="text" [(ngModel)]="username"></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" required></ion-input>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
       <ion-row>
         <ion-col>
-          <ion-button [routerLink]="['/bienvenido']" type="submit" color="light" expand="block" shape="round">Iniciar sesion</ion-button>
+          <ion-button  (click)="bienvenido()" type="submit" color="light" expand="block" shape="round">Iniciar sesion</ion-button>
           
-          <a [routerLink]="['/forgot-password']" class="small-text">olvidaste tu contraseña? recuperala ya!</a>
+          <a (click)="forgoPassword()" class="small-text">olvidaste tu contraseña? recuperala ya!</a>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>  
-          <ion-button [routerLink]="['/home']" id type="submit" color="light" shape="round">volver</ion-button>
+          <ion-button (click)="home()" id type="submit" color="light" shape="round">volver</ion-button>
         </ion-col>
     </ion-row>
     </form>
@@ -40,7 +40,7 @@
 </ion-content>
 
 
-<ion-footer>
+<ion-footer class="footer">
   <ion-toolbar color ="dark">
     <ion-title>Conoce nuestras redes</ion-title>  
     <ion-segment [scrollable]="true" value="heart">       
